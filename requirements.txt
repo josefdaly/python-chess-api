@@ -1,3 +1,7 @@
+# primary dependencies
 flask
 # https://github.com/josefdaly/chess-api
 python-chess==0.20.1
+
+# test dependencies
+pytest-flask
