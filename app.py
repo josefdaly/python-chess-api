@@ -1,4 +1,6 @@
-from flask import Flask
+import json
+
+from flask import Flask, request, jsonify
 
 
 def create_app():
@@ -10,7 +12,8 @@ def create_app():
 
     @app.route('/process_game', methods=['POST'])
     def process_game():
-        return 'Response'
+        move_sequence = json.loads(request.data)
+        return jsonify(move_sequence)
 
     return app
 
