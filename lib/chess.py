@@ -13,6 +13,7 @@ def make_ai_move(board):
     board.push_san(move)
     return board, move
 
+
 def process_moves(moves, board):
     for move in moves:
         board.push_san(move)
