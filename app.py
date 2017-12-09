@@ -2,6 +2,8 @@ import json
 
 from flask import Flask, request, jsonify
 
+from lib.chess_utils import run_game
+
 
 def create_app():
     app = Flask(__name__)
@@ -13,7 +15,7 @@ def create_app():
     @app.route('/process_game', methods=['POST'])
     def process_game():
         move_sequence = json.loads(request.data)
-        return jsonify(move_sequence)
+        return jsonify(run_game(move_sequence))
 
     return app
 

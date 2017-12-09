@@ -1,6 +1,6 @@
 import pytest, chess
 
-from lib.chess import process_moves
+from lib.chess_utils import process_moves
 
 
 class TestProcessMoves(object):

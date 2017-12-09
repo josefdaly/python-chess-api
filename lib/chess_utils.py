@@ -28,10 +28,7 @@ def process_moves(moves, board):
 
 
 def run_game(moves):
-    try:
-        board = process_moves(moves, chess.Board())
-    except ValueError:
-        return 'error'
+    board = process_moves(moves, chess.Board())
     if board.is_game_over():
         return {'move': None, 'winner': PLAYER_HUMAN}
     board, move = make_ai_move(board)
