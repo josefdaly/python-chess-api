@@ -7,7 +7,9 @@ from flask import url_for
 class TestProcessGameRoute(object):
 
     def test_basic_case_valid_moves(self, client):
-        moves = ['e2e4']
+        moves = {
+            'moves': ['e2e4']
+        }
         res = client.post(url_for('process_game'), data=json.dumps(moves))
 
         control_board = chess.Board()

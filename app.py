@@ -14,7 +14,7 @@ def create_app():
 
     @app.route('/process_game', methods=['POST'])
     def process_game():
-        move_sequence = json.loads(request.data)
+        move_sequence = json.loads(request.data)['moves']
         return jsonify(run_game(move_sequence))
 
     return app
